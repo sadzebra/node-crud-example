@@ -18,12 +18,11 @@ This app has also been manually tested using Postman.
 Dependencies
   - body-parser - Middleware used by ExpressJs reads a forms input and converts it to JavaScript Object and is accessible by req.body.
   - express - Express has simple and clear support nodes HTTP headers and allows me to used create(), get(), update() and delete() methods with minimal fuss.
-  - mongodb
   - mongoose - To interface with MongoDB
 
 Dev Dependencies
   - chai - Assertion library used in testing
   - chai-http -  Assertion library support HTTP
   - mocha - Testing Framework
-  - nodemon -
+  - nodemon - Nodemon watches the project directory, if anychanges are made it resets the application
 },
