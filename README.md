@@ -25,4 +25,6 @@ Dev Dependencies
   - chai-http -  Assertion library support HTTP
   - mocha - Testing Framework
   - nodemon - Nodemon watches the project directory, if anychanges are made it resets the application
-},
+
+
+Also see dev branch for an updates to this project
