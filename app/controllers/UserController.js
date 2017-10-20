@@ -9,6 +9,7 @@ exports.create = function(req, res) {
         res
           .status(400)
           .send({
+            result: "error",
             message: "User data can't be empty"
           });
     }
@@ -27,13 +28,14 @@ exports.create = function(req, res) {
             res
               .status(500)
               .send({
-                result: "Failed",
-                message: "Couldn't create new user."
+                result: "error",
+                message: "Couldn't create new user.",
+                error: err
               });
         }
         else {
             res.send({
-              result: "Successful",
+              result: "success",
               data
             });
         }
@@ -50,13 +52,13 @@ exports.getAll = function(req, res) {
             res
               .status(500)
               .send({
-                result: "Failed",
+                result: "error",
                 message: "Couldn't find users."
               });
         }
         else {
             res.send({
-              result: "Successful",
+              result: "success",
               data
             });
         }
@@ -73,13 +75,14 @@ exports.getSingle = function(req, res) {
             res
               .status(500)
               .send({
-                result: "Failed",
-                message: "Could't find user. id: " + req.params.userId
+                result: "error",
+                message: "Could't find user. id: " + req.params.userId,
+                error: err
               });
         }
         else {
             res.send({
-              result: "Successful",
+              result: "success",
               data
             });
         }
@@ -96,8 +99,9 @@ exports.update = function(req, res) {
             res
               .status(500)
               .send({
-                result: "Failed",
-                message: "Could't find user. id: " + req.params.userId
+                result: "error",
+                message: "Could't find user. id: " + req.params.userId,
+                error: err
               });
         }
 
@@ -112,13 +116,14 @@ exports.update = function(req, res) {
                 res
                   .status(500)
                   .send({
-                    result: "Failed",
-                    message: "Could't update user. id: " + req.params.userId
+                    result: "error",
+                    message: "Could't update user. id: " + req.params.userId,
+                    error: err
                   });
             }
             else {
                 res.send({
-                  result: "Successful",
+                  result: "Success",
                   data
                 });
             }
@@ -136,13 +141,14 @@ exports.delete = function(req, res) {
             res
               .status(500)
               .send({
-                result: "Failed",
-                message: "Could't delete user. id: " + req.params.userId
+                result: "error",
+                message: "Could't delete user. id: " + req.params.userId,
+                error: err
               });
         }
         else {
             res.send({
-              result: "Successful",
+              result: "success",
               message: "User was deleted successfully!"
             })
         }
